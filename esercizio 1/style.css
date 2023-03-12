@@ -110,10 +110,9 @@ body{
 .img-dim-small{
     display: flex;
     height: 300px;
-    flex-basis: 25%;
+    width: 280px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 10px 10px 5px rgb(206, 205, 205);
     overflow: hidden;
 }
 
@@ -184,7 +183,7 @@ span{
 .flex{
     display: flex;
     justify-content: space-between;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 
 .card-title{
@@ -217,6 +216,7 @@ span{
     justify-content: space-around;
     margin: 2% 2%;
 }
+
 
 
 .img-dim{
@@ -351,3 +351,117 @@ span{
     background-size: cover;
     background-position: center;
 }
+
+
+/*----------Esercizio 11/03/2023---------*/
+
+.flex-img-overlay{
+    justify-content: space-around;
+    margin: 2% 2%;
+}
+
+.conteiner-overlay{
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px rgba(122, 102, 102, 0.393)
+   
+}
+
+.conteiner-overlay::before{
+    content: " ";
+    position: absolute;
+    opacity: 0;
+    transform-origin: top bottom;
+    top:0;bottom:0;right: 0;left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all .5s ease-in-out;
+}
+
+
+/*------------botton------------*/
+
+/*----------------Use Font Awesome--------------*/
+
+
+i{
+    font-size: 16px;
+    margin: 2px;
+}
+
+.button{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+    color: black;
+    transform: scale(0);
+    transition: all .3s ease-in-out;
+} 
+
+
+
+#saveButton{
+    border-radius: 50%;
+    padding: 10px;
+    top: 10px;
+    left: 230px;
+    transition-delay: .1s;
+}
+
+
+
+#dotsButton{
+    border-radius: 50%;
+    padding: 10px;
+    top: 250px;
+    left: 230px;
+    transition-delay: .2s;
+}
+
+
+
+#shareButton{
+    border-radius: 50%;
+    top: 250px;
+    left: 180px;
+    padding: 10px;
+    transition-delay: .3s;
+}
+
+
+#linkButton{
+    font-family:Arial, Helvetica, sans-serif;
+    width: 110px;
+    top: 250px;
+    left: 10px;
+    border-radius: 15px;
+    padding: 10px 5px;
+    transition-delay: .4s;
+}
+
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+/*:hover*/
+
+
+
+.conteiner-overlay:hover::before{ 
+    opacity: 1;
+
+ }
+ 
+ 
+ .conteiner-overlay:hover .button{
+     transform: scale(1);
+ }
+
